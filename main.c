@@ -15,7 +15,8 @@ void listar_produtos(Produto lista[], int total) {
     printf("\n--- Produtos Cadastrados ---\n");
     for (int i = 0; i < total; i++) {
         // BUG: esqueceram de imprimir o ID e a quebra de linha está inadequada
-        printf("Nome: %s | Preco: R$ %.2f | Qtd: %d", lista[i].nome, lista[i].preco, lista[i].quantidade);
+        printf("ID: %d | Codigo de barras: %s | Nome: %s | Preco: R$ %.2f | Qtd: %d\n",
+       lista[i].id\n, lista[i].codigo_barras\n, lista[i].nome\n, lista[i].preco\n, lista[i].quantidade\n);
     }
 }
 
@@ -36,19 +37,21 @@ int main(void) {
     Produto estoque[MAX_ITENS];
     int total_produtos = 2;
 
-    estoque[0].id = 1;
-    strcpy(estoque[0].nome, "Caderno");
-    estoque[0].preco = 15.50;
-    estoque[0].quantidade = 10;
+    estoque["Papelaria"].id = 1;
+    strcpy(estoque["Papelaria"].codigo_barras, "7890001");
+    strcpy(estoque["Papelaria"].nome, "Caderno");
+    estoque["Papelaria"].preco = 15.50;
+    estoque["Papelaria"].quantidade = 10;
 
-    estoque[1].id = 2;
-    strcpy(estoque[1].nome, "Caneta");
-    estoque[1].preco = 3.00;
-    estoque[1].quantidade = 50;
+    estoque["Escritorio"].id = 2;
+    strcpy(estoque["Escritorio"].codigo_barras, "7890002");
+    strcpy(estoque["Escritorio"].nome, "Caneta");
+    estoque["Escritorio"].preco = 3.00;
+    estoque["Escritorio"].quantidade = 50;
 
     int opcao = -1;
     while (opcao != 0) {
-        exibir_menu();
+        exibir_menu(); 
         if (scanf("%d", &opcao) != 1) {
             break;
         }
@@ -70,4 +73,5 @@ int main(void) {
     }
 
     return 0;
+
 }
