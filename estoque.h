@@ -1,4 +1,5 @@
 #ifndef ESTOQUE_H
+#define ESTOQUE_MINIMO 5
 #define ESTOQUE_H
 
 #define MAX_ITENS 10
@@ -6,6 +7,7 @@
 
 typedef struct {
     int id;
+    char categoria[20];
     char nome[30];
     float preco;
     int quantidade;
